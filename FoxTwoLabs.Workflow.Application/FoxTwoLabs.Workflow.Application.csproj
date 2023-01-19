@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoxTwoLabs.Workflow.Domain\FoxTwoLabs.Workflow.Domain.csproj" />
+    <ProjectReference Include="..\FoxTwoLabs.Workflow.Infastructure\FoxTwoLabs.Workflow.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
