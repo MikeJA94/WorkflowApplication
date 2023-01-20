@@ -33,7 +33,11 @@ namespace FoxTwoLabs.Workflow.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-        }
+
+            modelBuilder.Entity<Models.Workflow>()
+                .Property(e => e.Map)
+                .HasColumnType("text");
+            }
 
            
         //Entities

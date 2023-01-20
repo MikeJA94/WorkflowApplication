@@ -3,10 +3,10 @@
 
 namespace FoxTwoLabs.Workflow.Domain.Models
 {
-    using System.Collections.Generic;
+    using FoxTwoLabs.Workflow.Domain.Enums;
     using System.ComponentModel.DataAnnotations;
 
-        public class Workflow : EntityBase
+        public class Task : EntityBase
         {
             public int Id { get; set; }
 
@@ -15,14 +15,8 @@ namespace FoxTwoLabs.Workflow.Domain.Models
 
             [MaxLength(500)]
             public string Description { get; set; }
-         
-            // Definition of workflow
-            public string Map{ get; set; }
 
+            public TaskType Type { get; set; }
 
-        Workflow ()
-        {
-
-        }
     }
 }
