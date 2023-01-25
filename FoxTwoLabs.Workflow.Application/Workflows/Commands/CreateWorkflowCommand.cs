@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using FoxTwoLabs.Workflow.Infrastructure.Services;
 
 namespace FoxTwoLabs.Workflow.Application.Workflows.Commands
 {
@@ -25,11 +25,13 @@ namespace FoxTwoLabs.Workflow.Application.Workflows.Commands
     {
         private readonly WorkflowDbContext _dbContext;
         private readonly IMapper _mapper;
+        private readonly IWorkflowService _workflowService;
 
-        public CreateWorkflowCommandHandler(WorkflowDbContext dbContext, IMapper mapper)
+        public CreateWorkflowCommandHandler(WorkflowDbContext dbContext, IMapper mapper, IWorkflowService workflowService)
         {
             _dbContext = dbContext;
             _mapper = mapper;
+            _workflowService = workflowService;
         }
 
         public async Task<WorkflowModel> Handle(CreateWorkflowCommand request, CancellationToken cancellationToken)

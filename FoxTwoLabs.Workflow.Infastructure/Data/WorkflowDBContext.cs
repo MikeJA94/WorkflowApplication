@@ -72,22 +72,22 @@ namespace FoxTwoLabs.Workflow.Infrastructure.Data
                 if (entity.State == EntityState.Added)
                 {
                     ((EntityBase)entity.Entity).DateCreated = DateTimeOffset.UtcNow;
-                    ((EntityBase)entity.Entity).CreatedBy_Id = currentUserId;
+                    ((EntityBase)entity.Entity).CreatedById = currentUserId;
                 }
                 else
                 {
                     try
                     {
-                        entity.Property("CreatedBy_Id").IsModified = false;
+                        entity.Property("CreatedById").IsModified = false;
                         entity.Property("DateCreated").IsModified = false;
                     }
                     catch (Exception ex)
                     {
-                        Console.Write("No BaseEntity" + ex.Message);
+                        Console.Write("No BaseEntity exists" + ex.Message);
                     }
                 }
                 ((EntityBase)entity.Entity).DateUpdated = DateTimeOffset.UtcNow;
-                ((EntityBase)entity.Entity).UpdatedBy_Id = currentUserId;
+                ((EntityBase)entity.Entity).UpdatedById = currentUserId;
             }
         }
     }

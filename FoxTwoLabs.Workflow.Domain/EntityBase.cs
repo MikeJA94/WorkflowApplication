@@ -12,11 +12,11 @@ namespace FoxTwoLabs.Workflow.Domain
 
         public DateTimeOffset DateCreated { get; set; }
 
-        public int? CreatedBy_Id { get; set; }
+        public int? CreatedById { get; set; }
 
         public DateTimeOffset? DateUpdated { get; set; }
 
-        public int? UpdatedBy_Id { get; set; }
+        public int? UpdatedById { get; set; }
 
 
         [MaxLength(1000)]

@@ -1,6 +1,7 @@
 using FoxTwoLabs.Workflow.Application.Workflows.Queries;
 using FoxTwoLabs.Workflow.Infrastructure.Data;
 using FoxTwoLabs.Workflow.Infrastructure.Options;
+using FoxTwoLabs.Workflow.Infrastructure.Services;
 using FoxTwoLabs.Workflow.Web.Authorization;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -66,6 +67,10 @@ namespace MyWebApplication
                         .AddRequirements(new APIKeyAuthorizationRequirement(apiKey.ToString())));
             });
 
+
+            // Add needed services
+            // Scoped service is per request....
+            services.AddScoped<IWorkflowService, WorkflowService>();
 
 
         }
